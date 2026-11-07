@@ -42,3 +42,17 @@ new EditorView({
   }),
   parent: document.querySelector('#editor'),
 });
+
+## Package identity and contributor workflow
+
+Although this repository is in the VizHub GitHub organization, its `package.json` identifies the published package as **`@replit/codemirror-interact`**. Keep that package identity distinct from VizHub-branded themes and editor packages.
+
+```bash
+npm install
+npm run dev
+npm run build
+npm test
+```
+
+The dev command starts Vite against [`dev/`](dev/); build/test scripts use CodeMirror build helpers and their configured test runner. Inspect [`src/`](src/) for the current implementation and extension exports. This repository is an editor extension, not a standalone collaborative editor; [VZCode](https://github.com/vizhub-studio/vzcode) is a separate project.
+
